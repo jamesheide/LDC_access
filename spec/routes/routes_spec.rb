@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe 'routing to home', type: :routing do 
-  it 'routes / to welcome#index' do
+  it 'routes / to home#index' do
     expect(get: '/').to route_to(
-      controller: 'welcome',
+      controller: 'home',
       action: 'index'
     )
   end

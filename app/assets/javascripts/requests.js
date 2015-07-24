@@ -1,4 +1,7 @@
 $(document).ready(function(){
+  $('.report_term_input').val(function() {
+    $(this).data().select2.updateSelection( $(this).data('init') )
+  });
   $('.report_term_input').select2({
     ajax: {
       url: '/application_roles/index.json',

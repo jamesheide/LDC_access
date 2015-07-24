@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+ApplicationRole.create(application: 'LDC', role: 'Faculty')
+ApplicationRole.create(application: 'LDC', role: 'Student')
+ApplicationRole.create(application: 'LDC', role: 'Post Doc')
+ApplicationRole.create(application: 'LDC', role: 'Staff')
