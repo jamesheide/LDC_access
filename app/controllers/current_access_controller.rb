@@ -1,11 +1,12 @@
 # Documentation up here
-class CurrentAccessController
+class CurrentAccessController < ApplicationController
   def my_orgs 
-    response = HrpyApi.get_my_orgs(params[:net_id])
-    render json: response
+    # response = 'hello world'
+    # response = 
+    render json: HrpyApi.get_my_orgs(params[:net_id])
   end
 
   def my_apps
-    render json: HrpyApi.get_my_apps(params[:net_id])
+    # render json: HrpyApi.get_my_apps(params[:net_id])
   end
 end
