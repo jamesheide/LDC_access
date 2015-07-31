@@ -1,6 +1,10 @@
 $(document).ready(function(){
-  // $('.report_term_input').val(function() {
-  //   $(this).data().select2.updateSelection( $(this).data('init') )
-  // });
-  $('.js-example-basic-multiple').select2();
+  $.getJSON('/application_roles/index.json', function(data) {
+    $.each(data, function(index) {
+      $('.application_role_input').append(
+        '<option value="' + data[index].id + '">' + data[index].text + '</option>'
+      )
+    });
+  });
+  $('.application_role_input').select2();
 });
