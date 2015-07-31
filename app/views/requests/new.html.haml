@@ -1,11 +1,9 @@
 .row
-  .small-8.columns
+  .small-8.small-centered.columns
     .row
       .small-3.columns
         %label.right.inline{:for => "right-label"} Application Roles
       .small-9.columns
-        %select.js-example-basic-multiple{multiple: 'multiple'}
-          = options_from_collection_for_select(@application_roles, 'id', 'app_and_role')
-            
-            
-      // |ar| @results[:results] << { id: ar.id, text: "#{ar.application} #{ar.role}" } }
+        %select.application_role_input{multiple: 'multiple'}
+      
+/ = options_from_collection_for_select(@application_roles, 'id', 'app_and_role')
