@@ -6,10 +6,5 @@ $(document).ready(function(){
       )
     });
   });
-  $('.application_role_input').select2();
-  
-  $('.new_org_input').select2({
-    tags: true,
-    dropdownCssClass: 'select2-hidden'
-  });
+  // $('.application_role_input').select2();
 });

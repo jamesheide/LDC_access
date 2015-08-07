@@ -6,13 +6,12 @@
       .small-3.columns
         %label.right.inline{:for => "right-label"} Application Roles:
       .small-9.columns
-        %select.application_role_input{multiple: 'multiple'}
-
+        %select.application_role_input
 
         
     .row
       .small-3.columns
         %label.right.inline{:for => "right-label"} Orgs:
       .small-9.columns
-        %select.js-example-basic-multiple.new_org_input{multiple: 'multiple'}
+        %select.js-example-basic-multiple.new_org_input
           / = options_from_collection_for_select(@application_roles, 'id', 'app_and_role')
