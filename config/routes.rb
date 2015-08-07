@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :requests
   get 'application_roles/index' => 'application_roles#index'
+  get 'current_access/my_orgs/:net_id' => 'current_access#my_orgs'
+  get 'current_access/my_apps/:net_id' => 'current_access#my_apps'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
