@@ -9,12 +9,10 @@ class HrpyApi
   end
 
   def self.get_my_orgs(net_id)
-    puts "#{hrpy_api_base}/security/v1/wt/#{net_id}?api_key=#{hrpy_api_key}"
-    HTTParty.get("#{hrpy_api_base}/security/v1/org/#{net_id}?api_key=#{hrpy_api_key}")
+    HTTParty.get("#{hrpy_api_base}/security/v1/org/#{net_id}?api_key=#{hrpy_api_key}", verify: false)
   end
+
   def self.get_my_apps(net_id)
-    HTTParty.get(
-      "#{hrpy_api_base}/security/v1/wt/#{net_id}?api_key=#{hrpy_api_key}"
-    )
+    HTTParty.get("#{hrpy_api_base}/security/v1/wt/#{net_id}?api_key=#{hrpy_api_key}", verify: false)
   end
 end
