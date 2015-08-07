@@ -1,18 +1,17 @@
 # This class defines the functions to call the HRPY api and parse the results
 class HrpyApi
-  def self.hrpy_api_base
-    Rails.application.secrets.hrpy_api_base
+  include HTTParty
+  base_uri Rails.application.secrets.hrpy_api_base
+  default_params api_key: Rails.application.secrets.hrpy_api_key
+  default_options.update(verify: false)
+
+  def self.get_user_orgs(net_id)
+    response = self.get("/security/v1/org/#{net_id}")
+    JSON.parse(response.body)
   end
 
-  def self.hrpy_api_key
-    Rails.application.secrets.hrpy_api_key
-  end
-
-  def self.get_my_orgs(net_id)
-    HTTParty.get("#{hrpy_api_base}/security/v1/org/#{net_id}?api_key=#{hrpy_api_key}", verify: false)
-  end
-
-  def self.get_my_apps(net_id)
-    HTTParty.get("#{hrpy_api_base}/security/v1/wt/#{net_id}?api_key=#{hrpy_api_key}", verify: false)
+  def self.get_user_wtstrings(net_id)
+    response = self.get("/security/v1/wt/#{net_id}")
+    JSON.parse(response.body)
   end
 end
