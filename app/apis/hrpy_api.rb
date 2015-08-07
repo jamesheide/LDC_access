@@ -16,6 +16,5 @@ class HrpyApi
     HTTParty.get(
       "#{hrpy_api_base}/security/v1/wt/#{net_id}?api_key=#{hrpy_api_key}"
     )
-    
   end
 end
