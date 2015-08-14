@@ -1,6 +1,8 @@
 $(document).ready(function(){
   // global object
-  store = new Persist.Store('My Application');
+  store = new Persist.Store('My Application', {
+    expires: 1
+  });
   // load persistent store after the DOM has loaded
   $('#new-request').click( function() {
     if($.trim($('#netid-input').val()) != '') {    
@@ -15,6 +17,7 @@ $(document).ready(function(){
   $('#tellall').click( function() {
     alert(store.get('netid'))
   });
+
   $.getJSON('/application_roles/index.json', function(data) {
     $.each(data, function(index) {
       $('.application-role-input').append(

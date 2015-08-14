@@ -1,23 +1,31 @@
 .row
-  .small-8.small-centered.columns
-    %h3 Current Access
-    %h3 Additional Access
-    .row
-      .small-3.columns
-        %label.right.inline{:for => "right-label"} Application Roles:
-      .small-9.columns
-        %select.application-role-input{multiple: "multiple"}
-          %option Ohio State
-          %option Notre Dame
-          %option Michigan
-          %option Indiana
-        
-    .row
-      .small-3.columns
-        %label.right.inline{:for => "right-label"} Orgs:
-      .small-9.columns
-        %select.js-example-basic-multiple.new-org-input
-          / = options_from_collection_for_select(@application_roles, 'id', 'app_and_role')
+  %h1 Current Access  
+.row
+  .small-6.columns
+    %h3 Current Apps
+    %ul#current-apps
+      %li Marching Band
+  .small-6.columns
+    %h3 Current Orgs
+    %ul#current-orgs
+      %li Golden Dome
+.row
+  %h1 Additional Access
+  .small-3.columns
+    %label.right.inline{:for => "right-label"} Application Roles:
+  .small-9.columns
+    %select.application-role-input{multiple: "multiple"}
+      %option Ohio State
+      %option Notre Dame
+      %option Michigan
+      %option Indiana
+    
+.row
+  .small-3.columns
+    %label.right.inline{:for => "right-label"} Orgs:
+  .small-9.columns
+    %select.js-example-basic-multiple.new-org-input
+      / = options_from_collection_for_select(@application_roles, 'id', 'app_and_role')
 
 .row
   %h3#tellall Tell Me My NetID
