@@ -6,7 +6,7 @@
       .small-3.columns
         %label.right.inline{:for => "right-label"} Application Roles:
       .small-9.columns
-        %select.application_role_input{multiple: "multiple"}
+        %select.application-role-input{multiple: "multiple"}
           %option Ohio State
           %option Notre Dame
           %option Michigan
@@ -16,5 +16,5 @@
       .small-3.columns
         %label.right.inline{:for => "right-label"} Orgs:
       .small-9.columns
-        %select.js-example-basic-multiple.new_org_input
+        %select.js-example-basic-multiple.new-org-input
           / = options_from_collection_for_select(@application_roles, 'id', 'app_and_role')
