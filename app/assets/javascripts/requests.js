@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$('.home.index').ready(function(){
   // global object
   store = new Persist.Store('My Application', {
     expires: 1
@@ -13,11 +13,14 @@ $(document).ready(function(){
       alert('hey, you need to select a net id before you can make a request');
       return false;
     }
-  })
-  $('#tellall').click( function() {
-    alert(store.get('netid'))
   });
+});
 
+$('.requests.new').ready(function() {
+  var store = new Persist.Store('My Application', {
+    expires: 1
+  });
+  $.getJSON('current_access/my_apps/' + store.get('netid'))
   $.getJSON('/application_roles/index.json', function(data) {
     $.each(data, function(index) {
       $('.application-role-input').append(
