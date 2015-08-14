@@ -20,7 +20,19 @@ $('.requests.new').ready(function() {
   var store = new Persist.Store('My Application', {
     expires: 1
   });
-  $.getJSON('current_access/my_apps/' + store.get('netid'))
+
+  var netid = store.get('netid')
+
+  $('#current-access-name').html('<h1>Current Access for ' + netid + '</h1>');
+
+  $.getJSON('/current_access/my_apps/' + netid, function(data) {
+    $('#current-apps').empty();
+    $.each(data, function(index) {
+      $('#current-apps').append(
+        '<li>' + data[index].role + '</li>'
+      )
+    });
+  });
   $.getJSON('/application_roles/index.json', function(data) {
     $.each(data, function(index) {
       $('.application-role-input').append(
